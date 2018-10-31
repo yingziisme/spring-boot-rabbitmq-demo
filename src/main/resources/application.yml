@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: rabbitmq-demo
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true #生产者可以判断消息是否发送到了broker
+    publisher-returns: true #生产者可以判断消息是否发送到了queue
+    listener:
+      direct:
+        acknowledge-mode: manual
+      simple:
+        acknowledge-mode: manual
+server:
+  port: 10001
